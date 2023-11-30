@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: harbor.reviewpro.com/rpservices/argo_hello-world_html:latest
+          image: harbor.xxxxxxx.com/rpxxxxxxxx/argo_hello-world_html:latest
           ports:
             - containerPort: 80
