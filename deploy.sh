@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Set variables
-DOCKER_IMAGE="harbor.reviewpro.com/rpservices/argo_hello-world_html"
+DOCKER_IMAGE="harbor.xxxxxxx.com/rpservices/argo_hello-world_html"
 DOCKER_TAG="latest"  # Or a dynamic tag based on your versioning strategy
-DOCKER_REGISTRY="harbor.reviewpro.com/rpservices"  # Example: docker.io for Docker Hub
-REGISTRY_USERNAME="your_registry_username"
-REGISTRY_PASSWORD="your_registry_password"
+DOCKER_REGISTRY="harbor.xxxxxxx.com"  # Example: docker.io for Docker Hub
+REGISTRY_USERNAME="xxxxx"
+REGISTRY_PASSWORD="xxxxxxx"
 KUBE_MANIFEST="argocd/application.yaml"
 
 # Ensure Docker is running
@@ -16,11 +16,12 @@ fi
 
 # Build Docker image
 echo "Building Docker image..."
-docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+# change directory
+docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ./docker/
 
 # Log in to Docker registry
-#echo "Logging into Docker registry ${DOCKER_REGISTRY}..."
-#echo ${REGISTRY_PASSWORD} | docker login ${DOCKER_REGISTRY} --username ${REGISTRY_USERNAME} --password-stdin
+echo "Logging into Docker registry ${DOCKER_REGISTRY}..."
+echo ${REGISTRY_PASSWORD} | docker login -u ${REGISTRY_USERNAME} ${DOCKER_REGISTRY} --password-stdin
 
 # Push Docker image to registry
 echo "Pushing Docker image to registry..."

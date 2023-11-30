@@ -11,7 +11,7 @@ spec:
     path: k8s/nginx
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: argo # namespace where the application resources should be deployed
+    namespace: default # namespace where the application resources should be deployed
   syncPolicy:
     automated:
       prune: true # if a resource is removed from git, delete it from the cluster automatically to keep the cluster in sync with git
