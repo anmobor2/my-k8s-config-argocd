@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REGISTRY = 'registry.hub.docker.com'
-        DOCKER_REPO = 'yourusername/hello-world'
-        REGISTRY_CREDENTIALS_ID = 'docker-hub-credentials'  // ID for Docker Hub credentials stored in Jenkins
+        DOCKER_REGISTRY = 'registry.hub.docker.com' // my Docker Hub registry MODIFY
+        DOCKER_REPO = 'yourusername/argo_hello-world_html' // my Docker Hub repository MODIFY
+        REGISTRY_CREDENTIALS_ID = 'docker-hub-credentials'  // ID for Docker Hub credentials stored in Jenkins MODIFY
     }
 
     stages {
